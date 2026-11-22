@@ -5,3 +5,4 @@ help: 略
 version: v1.0.3
 author: 饰乐
 repo: https://github.com/Zhalstar/astrbot_plugin_supervisor
+astrbot_version: ">=4.13.0"

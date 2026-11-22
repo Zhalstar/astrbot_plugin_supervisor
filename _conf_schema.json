@@ -1,4 +1,11 @@
 {
+    "user_ids": {
+        "description": "监督用户列表",
+        "hint": "列表中的用户将会被监督",
+        "type": "list",
+        "default": [],
+        "_special": "sender_id"
+    },
     "default_minute": {
         "description": "默认监督时长",
         "hint": "单位：分钟",
@@ -16,10 +23,86 @@
         "type": "int",
         "default": 10080
     },
-    "supervisor_prompt": {
-        "description": "AI监工人设",
-        "hint": "",
-        "type": "string",
-        "default": "用贴吧语言简短的一句话，督促这黑奴别水群滚去干活，注意督促时不要有多余的符号和表情，做到无废话"
+    "image": {
+        "description": "图片回复",
+        "type": "object",
+        "items": {
+            "weight": {
+                "description": "触发权重",
+                "hint": "触发概率 = 本权重 / 所有正权重之和",
+                "type": "int",
+                "slider": {
+                    "min": 0,
+                    "max": 100,
+                    "step": 1
+                },
+                "default": 40
+            },
+            "files": {
+                "description": "监工图片",
+                "hint": "随机发送的监工图片，可上传多张",
+                "type": "file",
+                "default": [],
+                "file_types": [
+                    "png",
+                    "jpg",
+                    "jpeg",
+                    "gif",
+                    "webp",
+                    "bmp"
+                ]
+            }
+        }
+    },
+    "llm": {
+        "description": "LLM 回复",
+        "type": "object",
+        "items": {
+            "weight": {
+                "description": "触发权重",
+                "hint": "触发概率 = 本权重 / 所有正权重之和",
+                "type": "int",
+                "slider": {
+                    "min": 0,
+                    "max": 100,
+                    "step": 1
+                },
+                "default": 40
+            },
+            "prompt": {
+                "description": "AI监工人设",
+                "hint": "",
+                "type": "text",
+                "default": "用贴吧语言简短的一句话，督促这黑奴别水群滚去干活，注意督促时不要有多余的符号和表情，做到无废话"
+            }
+        }
+    },
+    "poke": {
+        "description": "戳一戳",
+        "type": "object",
+        "items": {
+            "weight": {
+                "description": "触发权重",
+                "hint": "触发概率 = 本权重 / 所有正权重之和",
+                "type": "int",
+                "slider": {
+                    "min": 0,
+                    "max": 100,
+                    "step": 1
+                },
+                "default": 20
+            },
+            "times": {
+                "description": "戳一戳次数",
+                "hint": "每次触发时连续戳的次数",
+                "type": "int",
+                "slider": {
+                    "min": 1,
+                    "max": 5,
+                    "step": 1
+                },
+                "default": 2
+            }
+        }
     }
 }

@@ -1,7 +1,8 @@
-
 from astrbot.core.message.components import At
 from astrbot.core.platform.astr_message_event import AstrMessageEvent
-from astrbot.core.platform.sources.aiocqhttp.aiocqhttp_message_event import AiocqhttpMessageEvent
+from astrbot.core.platform.sources.aiocqhttp.aiocqhttp_message_event import (
+    AiocqhttpMessageEvent,
+)
 
 
 def get_ats(
@@ -45,5 +46,4 @@ async def get_nickname(event: AstrMessageEvent, user_id: int | str) -> str:
         except Exception:
             pass
 
-    # 依次取群名片、QQ 昵称、通用 nick，兜底数字 UID
     return info.get("card") or info.get("nickname") or info.get("nick") or str(user_id)
