@@ -2,7 +2,7 @@ name: astrbot_plugin_supervisor
 display_name: 赛博监工
 desc: 赛博监工，检测到某人水群，就提醒他滚去干活
 help: 略
-version: v1.0.3
+version: v1.0.4
 author: 饰乐
 repo: https://github.com/Zhalstar/astrbot_plugin_supervisor
 astrbot_version: ">=4.13.0"
